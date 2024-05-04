@@ -1,5 +1,5 @@
 -- Database should be prime_feedback
-
+DROP TABLE IF EXISTS feedback;
 -- Switch to "prime_feedback" before making:
 -- Table to store the feedback
 CREATE TABLE "feedback" (

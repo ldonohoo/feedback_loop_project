@@ -4,17 +4,18 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Header from '../Header';
 import FeelingForm from '../FeelingForm';
 import UnderstandingForm from '../UnderstandingForm';
-import SupportedForm from '../SupportedForm';
+import SupportForm from '../SupportForm';
 import CommentsForm from '../CommentsForm';
 import ReviewFeedback from '../ReviewFeedback';
 import ThankYouPage from '../ThankYouPage';
+import { useHistory } from 'react-router-dom';
+
 
 function App() {
 
   return (
     <div className='App'>
       <Header />
-      <FeelingForm/>
       <Router>
         <Route exact path='/'>
           <FeelingForm />
@@ -22,18 +23,18 @@ function App() {
         <Route exact path='/understanding'>
           <UnderstandingForm />
         </Route>
-        {/* <Route exact path='/supported'>
-          <SupportedForm />
+        <Route exact path='/support'>
+          <SupportForm />
         </Route>
         <Route exact path='/comments'>
            <CommentsForm />
         </Route>
-        <Route exact path='/feedback'>
+        <Route exact path='/review'>
            <ReviewFeedback />
         </Route>
         <Route exact path='/thanks'>
            <ThankYouPage />
-        </Route> */}
+        </Route>
       </Router>
     </div>
   );
