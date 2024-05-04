@@ -12,7 +12,7 @@ function ReviewFeedback() {
         useSelector( store => store.currentSupportScore);
     const currentComments = useSelector(store => store.currentComments);
 
-    console.log('feel'. currentFeelingScore)
+    console.log('feel', currentFeelingScore)
     console.log('sup', currentSupportScore);
 
     const handleSubmitButton = () => {
@@ -37,6 +37,7 @@ function ReviewFeedback() {
             <p>Understanding: {currentUnderstandingScore}</p>
             <p>Support: {currentSupportScore}</p>
             <p>Comments: {currentComments}</p>
+            <button onClick={() => {history.push('/support')}}>previous</button>  
             <button onClick={handleSubmitButton}
                     data-testid="next">Submit</button>
         </>

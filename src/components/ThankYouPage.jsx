@@ -7,10 +7,10 @@ function ThankYouPage() {
 
     const handleLeaveNewFeedbackButton =() => {
         // clear store data
-        dispatch({ type: 'RESET__CURRENT_FEELING' })
-        dispatch({ type: 'RESET__CURRENT_UNDERSTANDING' })
-        dispatch({ type: 'RESET__CURRENT_SUPPORT' })
-        dispatch({ type: 'RESET__CURRENT_COMMENTS' })
+        dispatch({ type: 'RESET_CURRENT_FEELING' })
+        dispatch({ type: 'RESET_CURRENT_UNDERSTANDING' })
+        dispatch({ type: 'RESET_CURRENT_SUPPORT' })
+        dispatch({ type: 'RESET_CURRENT_COMMENTS' })
         history.push('/');
     }
 

@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 function FeelingForm() {
     const history = useHistory();
-    const [inputFeelingScore, setInputFeelingScore] = useState(0);
+    const currentFeelingScore = useSelector(store => store.currentFeelingScore);
+    const [inputFeelingScore, setInputFeelingScore] = useState(currentFeelingScore);
     const dispatch = useDispatch();
 
     const handleNextButton =(event) => {
