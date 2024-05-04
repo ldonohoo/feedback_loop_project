@@ -24,6 +24,8 @@ function SupportForm() {
                 <label htmlFor="inputSupport">Supported?</label>
                 <input id="inputSupport" 
                        type="number"
+                       max="5"
+                       min="1"
                        data-testid="input"
                        onChange={(e) => {setInputSupportScore(e.target.value)}}
                        value={inputSupportScore} />

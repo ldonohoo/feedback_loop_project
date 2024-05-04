@@ -24,6 +24,8 @@ function UnderstandingForm() {
                 <label htmlFor="inputUnderstanding">Understanding?</label>
                 <input id="inputUnderstanding" 
                        type="number"
+                       max="5"
+                       min="1"
                        data-testid="input"
                        onChange={(e) => {setInputUnderstandingScore(e.target.value)}}
                        value={inputUnderstandingScore} />

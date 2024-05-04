@@ -23,6 +23,8 @@ function FeelingForm() {
                 <label htmlFor="inputFeeling">Feeling?</label>
                 <input id="inputFeeling" 
                         type="number"
+                        max="5"
+                        min="1"
                         data-testid="input"
                         onChange={(e) => {setInputFeelingScore(e.target.value)}}
                         value={inputFeelingScore} />

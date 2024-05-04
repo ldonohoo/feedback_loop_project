@@ -42,12 +42,15 @@ describe('Feedback Loop', () => {
     // based on finding 'correct' text on that view
     // 🚧 If you add input validation to your project, this test will need updating. 
     cy.contains(/feeling/i).should('exist');
+    cy.get('[data-testid="input"]').type('{selectall}1', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/understanding/i).should('exist');
+    cy.get('[data-testid="input"]').type('{selectall}1', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/support/i).should('exist');
+    cy.get('[data-testid="input"]').type('{selectall}1', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/comments/i).should('exist');
