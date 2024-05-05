@@ -43,4 +43,23 @@ router.get('/', (req, res) => {
     })
 })
 
+// This route deletes one feedback item
+router.delete('/:id', (req,res) => {
+    const feedbackId = req.params.id;
+    sqlText = `
+        DELETE FROM feedback
+            WHERE id = $1;
+    `;
+    pool.query(sqlText, [feedbackId])
+    .then(dbResponse => {
+        console.log('DELETE route successful in /api/feedback/:id');
+        res.sendStatus(200);
+    })
+    .catch(dbError => {
+        console.log('Error in DELETE route for /api/feedback', dbError);
+        res.sendStatus(500);
+    })
+});
+
+
 module.exports = router;

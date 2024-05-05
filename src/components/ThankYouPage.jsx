@@ -1,5 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import FeedbackResultsHeader from "./FeedbackResultsHeader";
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 function ThankYouPage() {
     const history = useHistory();
@@ -7,21 +10,24 @@ function ThankYouPage() {
 
     const handleLeaveNewFeedbackButton =() => {
         // clear store data
-        dispatch({ type: 'RESET__CURRENT_FEELING' })
-        dispatch({ type: 'RESET__CURRENT_UNDERSTANDING' })
-        dispatch({ type: 'RESET__CURRENT_SUPPORT' })
-        dispatch({ type: 'RESET__CURRENT_COMMENTS' })
+        dispatch({ type: 'RESET_CURRENT_FEELING' })
+        dispatch({ type: 'RESET_CURRENT_UNDERSTANDING' })
+        dispatch({ type: 'RESET_CURRENT_SUPPORT' })
+        dispatch({ type: 'RESET_CURRENT_COMMENTS' })
         history.push('/');
     }
 
     return (
         <>
-            <header>
-                <h1>Feedback!</h1>
-            </header>
+            <FeedbackResultsHeader />
             <h2>Thank You!</h2>
-            <button data-testid="next"
-                    onClick={handleLeaveNewFeedbackButton}>Leave New Feedback</button>
+            <Box display="flex"
+                     justifyContent="space-between"
+                     sx={{ m: '0 40%' }}>
+                <Button variant="contained" 
+                        data-testid="next"
+                        onClick={handleLeaveNewFeedbackButton}>Leave New Feedback</Button>
+            </Box>
         </>
     )
 }

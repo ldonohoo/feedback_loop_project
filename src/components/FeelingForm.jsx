@@ -1,10 +1,14 @@
 import { useState } from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import Header from './Header';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 function FeelingForm() {
     const history = useHistory();
-    const [inputFeelingScore, setInputFeelingScore] = useState(0);
+    const currentFeelingScore = useSelector(store => store.currentFeelingScore);
+    const [inputFeelingScore, setInputFeelingScore] = useState(currentFeelingScore);
     const dispatch = useDispatch();
 
     const handleNextButton =(event) => {
@@ -18,16 +22,24 @@ function FeelingForm() {
 
     return (
         <>
+            <Header />
             <h2>How are you feeling Today?</h2>
             <form onSubmit={handleNextButton}>
                 <label htmlFor="inputFeeling">Feeling?</label>
                 <input id="inputFeeling" 
                         type="number"
+                        max="5"
+                        min="1"
                         data-testid="input"
                         onChange={(e) => {setInputFeelingScore(e.target.value)}}
                         value={inputFeelingScore} />
-                <button type="submit"
-                        data-testid="next">next</button>
+                <Box display="flex"
+                     sx={{ m: '0 53.5%'}}>
+                    <Button id="feeling-button"
+                            variant="contained"
+                            type="submit"
+                            data-testid="next">next</Button>
+                </Box>
             </form>
         </>
     )

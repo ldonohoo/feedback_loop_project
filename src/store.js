@@ -37,12 +37,19 @@ const currentComments = (state='', action) => {
     return state;
 }
 
+const feedback = (state=[], action) => {
+    if (action.type === 'SET_FEEDBACK') {
+        return action.payload;
+    }
+    return state;
+}
 
 const store = createStore(combineReducers({
     currentFeelingScore,
     currentUnderstandingScore,
     currentSupportScore,
-    currentComments
+    currentComments,
+    feedback
 }), applyMiddleware(logger)
 );
 
