@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import Header from './Header';
 
 function FeelingForm() {
     const history = useHistory();
@@ -19,6 +20,7 @@ function FeelingForm() {
 
     return (
         <>
+            <Header />
             <h2>How are you feeling Today?</h2>
             <form onSubmit={handleNextButton}>
                 <label htmlFor="inputFeeling">Feeling?</label>

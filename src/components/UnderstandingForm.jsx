@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import Header from "./Header";
 
 function UnderstandingForm() {
     const history = useHistory();
@@ -24,6 +25,7 @@ function UnderstandingForm() {
     
     return (
         <>
+            <Header />
             <h2>How are you understanding the content?</h2>
             <form onSubmit={(e) => {handleButton(e, 'next')}}>
                 <label htmlFor="inputUnderstanding">Understanding?</label>

@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import FeedbackResultsHeader from "./FeedbackResultsHeader";
 
 function ThankYouPage() {
     const history = useHistory();
@@ -16,9 +17,7 @@ function ThankYouPage() {
 
     return (
         <>
-            <header>
-                <h1>Feedback!</h1>
-            </header>
+            <FeedbackResultsHeader />
             <h2>Thank You!</h2>
             <button data-testid="next"
                     onClick={handleLeaveNewFeedbackButton}>Leave New Feedback</button>

@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
+import Header from "./Header";
 
-function ReviewFeedback() {
+function ReviewFeedback({fetchFeedback}) {
     const history = useHistory();
     const currentFeelingScore = 
         useSelector(store => store.currentFeelingScore);
@@ -26,12 +27,20 @@ function ReviewFeedback() {
                 comments: currentComments
             }
         })
+        .then(response => {
+            console.log('Feedback sucessfully added!');
+            fetchFeedback();
+        })
+        .catch(error => {
+            console.log('Problem adding feedback. Try again later.');
+        })
         history.push('/thanks');
 
     }
 
     return (
         <>
+            <Header />
             <h2>Review Your Feedback</h2>
             <p>Feelings: {currentFeelingScore}</p>
             <p>Understanding: {currentUnderstandingScore}</p>

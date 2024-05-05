@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import Header from "./Header";
 
 function SupportForm() {
     const history = useHistory();
@@ -23,6 +24,7 @@ function SupportForm() {
 
     return (
         <>
+            <Header />
             <h2>How well are you being Supported?</h2>
             <form onSubmit={(e) => {handleButton(e, 'next')}}>
                 <label htmlFor="inputSupport">Supported?</label>

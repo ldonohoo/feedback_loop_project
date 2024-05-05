@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import Header from "./Header";
 
 function CommentsForm() {
     const history = useHistory();
@@ -23,6 +24,7 @@ function CommentsForm() {
 
     return (
         <>
+            <Header />
             <h2>Comments?</h2>
             <form onSubmit={(e) => {handleButton(e, 'next')}}>
                 <label htmlFor="inputComments">Any comments you want to leave? </label>
