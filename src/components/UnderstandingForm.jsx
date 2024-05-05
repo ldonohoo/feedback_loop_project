@@ -2,6 +2,8 @@ import { useHistory } from "react-router-dom";
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import Header from "./Header";
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 function UnderstandingForm() {
     const history = useHistory();
@@ -36,9 +38,15 @@ function UnderstandingForm() {
                        data-testid="input"
                        onChange={(e) => {setInputUnderstandingScore(e.target.value)}}
                        value={inputUnderstandingScore} />
-                <button onClick={(e) => {handleButton(e, 'previous')}}>previous</button>  
-                <button type="submit"
-                        data-testid="next">next</button>
+                <Box display="flex"
+                     justifyContent="space-between"
+                     sx={{ m: '0 40%' }}>
+                    <Button variant="contained" 
+                            onClick={(e) => {handleButton(e, 'previous')}}>previous</Button>  
+                    <Button variant="contained" 
+                            type="submit"
+                            data-testid="next">next</Button>
+                </Box>
             </form>
         </>
     )

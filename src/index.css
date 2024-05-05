@@ -3,3 +3,55 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+
+label {
+  display: block;
+  font-size: 1.1rem;
+  text-align: left;
+  margin-left: 40%;
+  margin-bottom: .5rem;
+  color: rgb(89, 89, 89);
+}
+
+input {
+  display: block;
+  font-size: 1.3rem;
+  text-align: left;
+  margin-left: 40%;
+  margin-bottom: .5rem;
+  min-width: 2rem;
+}
+
+#inputComments {
+  border: none;
+  border-bottom: .1rem solid black;
+  margin-left: 20%;
+  min-width: 60%;
+}
+
+#commentsLabel {
+  margin-left: 20%;
+}
+
+.Box {
+  margin-right: 0 20%;
+}
+
+#admin-table {
+  margin: 0 10%;
+}
+
+#admin-table-row {
+  border: .1rem solid black;
+}
+
+#admin-table-row:nth-child(ODD) {
+  background-color: rgb(207, 207, 207);
+}
+
+#admin-table-header {
+  background-color: cadetblue;
+  font-size: 1.5rem;
+}

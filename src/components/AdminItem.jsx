@@ -1,4 +1,6 @@
 import axios from "axios";
+import TableCell from '@mui/material/TableCell';
+import Button from '@mui/material/Button';
 
 function AdminItem({item, fetchFeedback}) {
 
@@ -18,11 +20,12 @@ function AdminItem({item, fetchFeedback}) {
 
     return (
         <>
-            <td>{item.feeling}</td>
-            <td>{item.understanding}</td>
-            <td>{item.support}</td>
-            <td>"{item.comments}"</td>
-            <button onClick={handleDelete}>🗑️</button>
+            <TableCell>{item.feeling}</TableCell>
+            <TableCell>{item.understanding}</TableCell>
+            <TableCell>{item.support}</TableCell>
+            <TableCell>"{item.comments}"</TableCell>
+            <TableCell><Button variant="outlined"
+                               onClick={handleDelete}>🗑️</Button></TableCell>
         </>
     )
 }

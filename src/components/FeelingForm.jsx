@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Header from './Header';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 function FeelingForm() {
     const history = useHistory();
@@ -31,8 +33,13 @@ function FeelingForm() {
                         data-testid="input"
                         onChange={(e) => {setInputFeelingScore(e.target.value)}}
                         value={inputFeelingScore} />
-                <button type="submit"
-                        data-testid="next">next</button>
+                <Box display="flex"
+                     sx={{ m: '0 53.5%'}}>
+                    <Button id="feeling-button"
+                            variant="contained"
+                            type="submit"
+                            data-testid="next">next</Button>
+                </Box>
             </form>
         </>
     )
