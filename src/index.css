@@ -2,9 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  min-width: 650px;
 }
-
-
 
 label {
   display: block;
@@ -40,7 +39,7 @@ input {
 }
 
 #admin-table {
-  margin: 0 10%;
+  min-width: 650px;
 }
 
 #admin-table-row {
@@ -52,6 +51,8 @@ input {
 }
 
 #admin-table-header {
-  background-color: cadetblue;
   font-size: 1.5rem;
+  text-align: left;
 }
+
+

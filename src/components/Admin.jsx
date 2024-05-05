@@ -23,7 +23,7 @@ function Admin({fetchFeedback}) {
     return (
         <>
             <FeedbackResultsHeader />
-            <TableContainer sx={{ m: '5%' }}>
+            <TableContainer >
                 <Table id="admin-table">
                     <TableHead id="admin-table-header">
                         <tr>
